@@ -13,31 +13,41 @@ const inputElement = document.getElementById('email');
 const buttonElement = document.createElement("send");
 
 
-send.addEventListener("click", function(){
+// send.addEventListener("click", function(){
+
+//   const inputValue = inputElement.value;
+
+//   console.log(inputValue);
+// });
+
+const inputValue = inputElement.value;
+
+
+for (let i = 0; i < acceptedemails; i++){
 
   const inputValue = inputElement.value;
-}); 
-  console.log(inputValue);
 
-  for (let i = 0; i < squadreDaAggiungere; i++){
-   
-    const inputValue = inputElement.value;
+  let emailTrovata = false;
 
-    let emailTrovata= false;
+  for (let a = 0; a < acceptedemails.length;c++){
 
-    for (let c = 0; c < acceptedemails.length;c++){
+    const squadra = acceptedemails[a];
 
-      const squadra = acceptedemails[c];
+    if(squadra === inputValue){
 
-      if(inputValue === acceptedemails){
-        emailTrovata = true;
-      }
+      emailTrovata = true;
+
     }
 
-    if (emailTrovata){
-      acceptedemails.push(emailTrovata);
-    }
+  }
+  
+  if (!emailTrovata){
+
+    acceptedemails.push(inputValue);
+
   }
 
+}
+console.log(inputValue);
 
-console.log(inputElement.value);
+
