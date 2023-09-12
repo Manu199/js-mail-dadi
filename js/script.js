@@ -16,19 +16,28 @@ const buttonElement = document.createElement("send");
 send.addEventListener("click", function(){
 
   const inputValue = inputElement.value;
-
+}); 
   console.log(inputValue);
 
-  let squadraTrovata = false;
+  for (let i = 0; i < squadreDaAggiungere; i++){
+   
+    const inputValue = inputElement.value;
 
-  for (let c = 0; c < acceptedemails.length;c++){
+    let emailTrovata= false;
 
-    const squadra = acceptedemails[c];
+    for (let c = 0; c < acceptedemails.length;c++){
 
-    if(inputValue === acceptedemails){
-      squadraTrovata = true;
+      const squadra = acceptedemails[c];
+
+      if(inputValue === acceptedemails){
+        emailTrovata = true;
+      }
+    }
+
+    if (emailTrovata){
+      acceptedemails.push(emailTrovata);
     }
   }
-});
+
 
 console.log(inputElement.value);
